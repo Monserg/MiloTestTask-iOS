@@ -28,16 +28,39 @@
                                     <action selector="handlerRunButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cHC-su-jhG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tw-tV-au5">
+                                <rect key="frame" x="50" y="150" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1tw-tV-au5" secondAttribute="trailing" constant="50" id="aIf-Id-rPe"/>
+                            <constraint firstItem="1tw-tV-au5" firstAttribute="top" secondItem="b3d-kM-Lvs" secondAttribute="bottom" constant="50" id="cJ0-FU-uLZ"/>
+                            <constraint firstItem="1tw-tV-au5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oCP-ty-cSh"/>
                             <constraint firstItem="b3d-kM-Lvs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sVi-zN-JlL"/>
+                            <constraint firstItem="1tw-tV-au5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="uPs-jW-yuU"/>
                             <constraint firstItem="b3d-kM-Lvs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ubu-Ue-tK2"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X5C-f4-0k9" appends="YES" id="0Up-v2-kTc"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="1tw-tV-au5" id="ebb-kB-eho"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X5C-f4-0k9">
+                    <connections>
+                        <action selector="handlerTapGestureRecognizer:" destination="BYZ-38-t0r" id="e0K-Y6-3wh"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Jqy-5h-OHy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

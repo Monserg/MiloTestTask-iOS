@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - Properties
+    @IBOutlet weak var textField: UITextField!
     
 
     // MARK: - Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        textField.delegate = self
+        textField.addCancelButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +46,22 @@ class ViewController: UIViewController {
         }
         
         print("How are you today?")
+    }
+    
+    
+    // MARK: - Gesture
+    @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        textField.resignFirstResponder()
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }
 
